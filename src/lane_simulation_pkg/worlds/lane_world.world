@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="lane_world">
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <model name="road">
+      <static>true</static>
+      <link name="road_link">
+        <pose>0 0 0.01 0 0 0</pose>
+
+        <collision name="road_collision">
+          <geometry>
+            <box>
+              <size>1000 8 0.02</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="road_visual">
+          <geometry>
+            <box>
+              <size>1000 8 0.02</size>
+            </box>
+          </geometry>
+
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="lane_markings">
+      <static>true</static>
+      <link name="lane_markings_link">
+        <visual name="left_lane_line">
+          <pose>0 2 0.025 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>1000 0.12 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+
+        <visual name="right_lane_line">
+          <pose>0 -2 0.025 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>1000 0.12 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>

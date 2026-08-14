@@ -12,6 +12,7 @@ class DirectionSubscriber(Node):
         self.declare_parameter('straight_tolerance', 30.0)
         self.declare_parameter('turn_threshold', 45.0)
         self.direction = 'STRAIGHT'
+        self.last_logged_direction = None
         self.direction_publisher = self.create_publisher(
             String,
             'steering_direction',
@@ -51,9 +52,11 @@ class DirectionSubscriber(Node):
         direction_message = String()
         direction_message.data = self.direction
         self.direction_publisher.publish(direction_message)
-        self.get_logger().info(
-            f'Lane offset: {message.data:.2f} -> {self.direction}'
-        )
+        if self.direction != self.last_logged_direction:
+            self.get_logger().info(
+                f'Lane offset: {message.data:.2f} -> {self.direction}'
+            )
+            self.last_logged_direction = self.direction
 
 
 def main(args=None):
