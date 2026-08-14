@@ -34,6 +34,7 @@ setup(
             'lane_detection_pkg.direction_publisher:main',
             'direction_subscriber = '
             'lane_detection_pkg.direction_subscriber:main',
+            'lane_controller = lane_detection_pkg.lane_controller:main',
             'video_reader = lane_detection_pkg.video_reader:main',
         ],
     },

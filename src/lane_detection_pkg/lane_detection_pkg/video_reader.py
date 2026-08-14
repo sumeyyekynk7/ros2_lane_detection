@@ -1,9 +1,12 @@
 from pathlib import Path
 
 import cv2
+from cv_bridge import CvBridge
 import numpy as np
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import qos_profile_sensor_data
+from sensor_msgs.msg import Image
 from std_msgs.msg import Float32
 
 
@@ -14,6 +17,7 @@ class VideoReader(Node):
 
         default_path = Path(__file__).parent / 'videos' / 'road.mp4'
         self.declare_parameter('video_path', str(default_path))
+        self.declare_parameter('image_topic', '')
         self.declare_parameter('center_calibration_px', -200.0)
         video_path = self.get_parameter(
             'video_path'
@@ -21,21 +25,40 @@ class VideoReader(Node):
         self.center_calibration = self.get_parameter(
             'center_calibration_px'
         ).get_parameter_value().double_value
+        image_topic = self.get_parameter(
+            'image_topic'
+        ).get_parameter_value().string_value
+        self.camera_input = bool(image_topic)
+        self.reference_y_ratio = 0.40 if self.camera_input else 0.75
+        self.line_bottom_ratio = 0.41 if self.camera_input else 0.90
+        self.line_top_ratio = 0.34 if self.camera_input else 0.50
+        self.minimum_slope = 0.10 if self.camera_input else 0.40
 
-        self.capture = cv2.VideoCapture(video_path)
-        if not self.capture.isOpened():
-            raise RuntimeError(f'Video could not be opened: {video_path}')
-
+        self.capture = None
+        self.bridge = CvBridge()
         self.offset_publisher = self.create_publisher(Float32, 'lane_offset', 10)
         self.left_line_model = None
         self.right_line_model = None
         self.left_missing_frames = 0
         self.right_missing_frames = 0
         self.line_memory_frames = 45
-        fps = self.capture.get(cv2.CAP_PROP_FPS)
-        timer_period = 1.0 / fps if fps > 0.0 else 1.0 / 30.0
-        self.timer = self.create_timer(timer_period, self.show_next_frame)
-        self.get_logger().info(f'Video opened: {video_path}')
+        if image_topic:
+            self.image_subscription = self.create_subscription(
+                Image,
+                image_topic,
+                self.image_callback,
+                qos_profile_sensor_data
+            )
+            self.get_logger().info(f'Camera topic opened: {image_topic}')
+        else:
+            self.capture = cv2.VideoCapture(video_path)
+            if not self.capture.isOpened():
+                raise RuntimeError(f'Video could not be opened: {video_path}')
+
+            fps = self.capture.get(cv2.CAP_PROP_FPS)
+            timer_period = 1.0 / fps if fps > 0.0 else 1.0 / 30.0
+            self.timer = self.create_timer(timer_period, self.show_next_frame)
+            self.get_logger().info(f'Video opened: {video_path}')
 
     def show_next_frame(self):
         success, frame = self.capture.read()
@@ -44,6 +67,19 @@ class VideoReader(Node):
             self.get_logger().info('Video finished.')
             rclpy.shutdown()
             return
+
+        self.process_frame(frame)
+
+    def image_callback(self, message):
+        try:
+            frame = self.bridge.imgmsg_to_cv2(message, desired_encoding='bgr8')
+        except Exception as error:
+            self.get_logger().error(f'Camera image conversion failed: {error}')
+            return
+
+        self.process_frame(frame)
+
+    def process_frame(self, frame):
 
         gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         blurred_frame = cv2.GaussianBlur(gray_frame, (5, 5), 0)
@@ -65,14 +101,15 @@ class VideoReader(Node):
             self.get_logger().info('Video stopped with Q key.')
             rclpy.shutdown()
 
-    @staticmethod
-    def keep_road_region(edge_frame):
+    def keep_road_region(self, edge_frame):
         height, width = edge_frame.shape
+        bottom_ratio = 0.48 if self.camera_input else 0.92
+        top_ratio = 0.31 if self.camera_input else 0.50
         road_polygon = np.array([[
-            (0, int(height * 0.92)),
-            (int(width * 0.43), int(height * 0.50)),
-            (int(width * 0.57), int(height * 0.50)),
-            (width - 1, int(height * 0.92)),
+            (0, int(height * bottom_ratio)),
+            (int(width * 0.43), int(height * top_ratio)),
+            (int(width * 0.57), int(height * top_ratio)),
+            (width - 1, int(height * bottom_ratio)),
         ]], dtype=np.int32)
 
         mask = np.zeros_like(edge_frame)
@@ -100,7 +137,7 @@ class VideoReader(Node):
                     continue
 
                 slope = (y2 - y1) / (x2 - x1)
-                if abs(slope) < 0.4:
+                if abs(slope) < self.minimum_slope:
                     continue
 
                 intercept = y1 - slope * x1
@@ -129,17 +166,19 @@ class VideoReader(Node):
             self.left_line_model,
             self.left_missing_frames,
             self.line_memory_frames,
-            frame.shape[0]
+            frame.shape[0],
+            self.reference_y_ratio
         )
         self.right_line_model, self.right_missing_frames = self.smooth_line(
             right_lines,
             self.right_line_model,
             self.right_missing_frames,
             self.line_memory_frames,
-            frame.shape[0]
+            frame.shape[0],
+            self.reference_y_ratio
         )
 
-        reference_y = frame.shape[0] * 0.75
+        reference_y = frame.shape[0] * self.reference_y_ratio
         if not left_lines and right_lines:
             right_shift = self.model_shift(
                 previous_right, self.right_line_model, reference_y
@@ -156,10 +195,12 @@ class VideoReader(Node):
             )
 
         left_x = self.draw_average_line(
-            line_frame, self.left_line_model, (255, 0, 0)
+            line_frame, self.left_line_model, (255, 0, 0),
+            self.line_bottom_ratio, self.line_top_ratio
         )
         right_x = self.draw_average_line(
-            line_frame, self.right_line_model, (0, 255, 0)
+            line_frame, self.right_line_model, (0, 255, 0),
+            self.line_bottom_ratio, self.line_top_ratio
         )
 
         lane_offset = None
@@ -192,7 +233,7 @@ class VideoReader(Node):
     @staticmethod
     def smooth_line(
         line_group, previous_model, missing_frames, max_missing_frames,
-        frame_height
+        frame_height, reference_y_ratio
     ):
         if not line_group:
             missing_frames += 1
@@ -211,7 +252,7 @@ class VideoReader(Node):
         if previous_model is None:
             return new_model, 0
 
-        reference_y = frame_height * 0.75
+        reference_y = frame_height * reference_y_ratio
         previous_x = (
             reference_y - previous_model[1]
         ) / previous_model[0]
@@ -256,26 +297,26 @@ class VideoReader(Node):
         return slope, shifted_intercept
 
     @staticmethod
-    def draw_average_line(frame, line_model, color):
+    def draw_average_line(
+        frame, line_model, color, line_bottom_ratio, line_top_ratio
+    ):
         if line_model is None:
             return None
 
         slope, intercept = line_model
 
         height, width = frame.shape[:2]
-        y1 = int(height * 0.90)
-        y2 = int(height * 0.50)
+        y1 = int(height * line_bottom_ratio)
+        y2 = int(height * line_top_ratio)
         x1 = int((y1 - intercept) / slope)
         x2 = int((y2 - intercept) / slope)
-
-        if not (0 <= x1 < width and 0 <= x2 < width):
-            return None
 
         cv2.line(frame, (x1, y1), (x2, y2), color, 8)
         return x1
 
     def close(self):
-        self.capture.release()
+        if self.capture is not None:
+            self.capture.release()
         cv2.destroyAllWindows()
 
 
