@@ -1,35 +1,1165 @@
 <?xml version="1.0"?>
 <sdf version="1.6">
   <world name="lane_world">
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
 
-    <include>
-      <uri>model://sun</uri>
-    </include>
-
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
-
-    <model name="road">
+    <!--
+      Closed circular track: centre=(0, 20),
+      centreline radius=20 m, lane width=4 m.
+      The robot starts at (0, 0) facing +X, tangent to the centreline.
+      Regenerate this file with scripts/generate_lane_world.py.
+    -->
+    <model name="closed_loop_road">
       <static>true</static>
       <link name="road_link">
-        <pose>0 0 0.01 0 0 0</pose>
-
-        <collision name="road_collision">
-          <geometry>
-            <box>
-              <size>1000 8 0.02</size>
-            </box>
-          </geometry>
+        <collision name="road_collision_0">
+          <pose>0.000000 0.000000 0.01 0 0 0.000000</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
         </collision>
-
-        <visual name="road_visual">
-          <geometry>
-            <box>
-              <size>1000 8 0.02</size>
-            </box>
-          </geometry>
-
+        <visual name="road_visual_0">
+          <pose>0.000000 0.000000 0.01 0 0 0.000000</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_1">
+          <pose>1.308063 0.042822 0.01 0 0 0.065450</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_1">
+          <pose>1.308063 0.042822 0.01 0 0 0.065450</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_2">
+          <pose>2.610524 0.171103 0.01 0 0 0.130900</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_2">
+          <pose>2.610524 0.171103 0.01 0 0 0.130900</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_3">
+          <pose>3.901806 0.384294 0.01 0 0 0.196350</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_3">
+          <pose>3.901806 0.384294 0.01 0 0 0.196350</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_4">
+          <pose>5.176381 0.681483 0.01 0 0 0.261799</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_4">
+          <pose>5.176381 0.681483 0.01 0 0 0.261799</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_5">
+          <pose>6.428789 1.061397 0.01 0 0 0.327249</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_5">
+          <pose>6.428789 1.061397 0.01 0 0 0.327249</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_6">
+          <pose>7.653669 1.522409 0.01 0 0 0.392699</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_6">
+          <pose>7.653669 1.522409 0.01 0 0 0.392699</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_7">
+          <pose>8.845774 2.062545 0.01 0 0 0.458149</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_7">
+          <pose>8.845774 2.062545 0.01 0 0 0.458149</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_8">
+          <pose>10.000000 2.679492 0.01 0 0 0.523599</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_8">
+          <pose>10.000000 2.679492 0.01 0 0 0.523599</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_9">
+          <pose>11.111405 3.370608 0.01 0 0 0.589049</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_9">
+          <pose>11.111405 3.370608 0.01 0 0 0.589049</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_10">
+          <pose>12.175229 4.132933 0.01 0 0 0.654498</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_10">
+          <pose>12.175229 4.132933 0.01 0 0 0.654498</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_11">
+          <pose>13.186916 4.963204 0.01 0 0 0.719948</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_11">
+          <pose>13.186916 4.963204 0.01 0 0 0.719948</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_12">
+          <pose>14.142136 5.857864 0.01 0 0 0.785398</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_12">
+          <pose>14.142136 5.857864 0.01 0 0 0.785398</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_13">
+          <pose>15.036796 6.813084 0.01 0 0 0.850848</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_13">
+          <pose>15.036796 6.813084 0.01 0 0 0.850848</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_14">
+          <pose>15.867067 7.824771 0.01 0 0 0.916298</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_14">
+          <pose>15.867067 7.824771 0.01 0 0 0.916298</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_15">
+          <pose>16.629392 8.888595 0.01 0 0 0.981748</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_15">
+          <pose>16.629392 8.888595 0.01 0 0 0.981748</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_16">
+          <pose>17.320508 10.000000 0.01 0 0 1.047198</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_16">
+          <pose>17.320508 10.000000 0.01 0 0 1.047198</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_17">
+          <pose>17.937455 11.154226 0.01 0 0 1.112647</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_17">
+          <pose>17.937455 11.154226 0.01 0 0 1.112647</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_18">
+          <pose>18.477591 12.346331 0.01 0 0 1.178097</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_18">
+          <pose>18.477591 12.346331 0.01 0 0 1.178097</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_19">
+          <pose>18.938603 13.571211 0.01 0 0 1.243547</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_19">
+          <pose>18.938603 13.571211 0.01 0 0 1.243547</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_20">
+          <pose>19.318517 14.823619 0.01 0 0 1.308997</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_20">
+          <pose>19.318517 14.823619 0.01 0 0 1.308997</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_21">
+          <pose>19.615706 16.098194 0.01 0 0 1.374447</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_21">
+          <pose>19.615706 16.098194 0.01 0 0 1.374447</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_22">
+          <pose>19.828897 17.389476 0.01 0 0 1.439897</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_22">
+          <pose>19.828897 17.389476 0.01 0 0 1.439897</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_23">
+          <pose>19.957178 18.691937 0.01 0 0 1.505346</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_23">
+          <pose>19.957178 18.691937 0.01 0 0 1.505346</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_24">
+          <pose>20.000000 20.000000 0.01 0 0 1.570796</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_24">
+          <pose>20.000000 20.000000 0.01 0 0 1.570796</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_25">
+          <pose>19.957178 21.308063 0.01 0 0 1.636246</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_25">
+          <pose>19.957178 21.308063 0.01 0 0 1.636246</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_26">
+          <pose>19.828897 22.610524 0.01 0 0 1.701696</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_26">
+          <pose>19.828897 22.610524 0.01 0 0 1.701696</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_27">
+          <pose>19.615706 23.901806 0.01 0 0 1.767146</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_27">
+          <pose>19.615706 23.901806 0.01 0 0 1.767146</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_28">
+          <pose>19.318517 25.176381 0.01 0 0 1.832596</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_28">
+          <pose>19.318517 25.176381 0.01 0 0 1.832596</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_29">
+          <pose>18.938603 26.428789 0.01 0 0 1.898046</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_29">
+          <pose>18.938603 26.428789 0.01 0 0 1.898046</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_30">
+          <pose>18.477591 27.653669 0.01 0 0 1.963495</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_30">
+          <pose>18.477591 27.653669 0.01 0 0 1.963495</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_31">
+          <pose>17.937455 28.845774 0.01 0 0 2.028945</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_31">
+          <pose>17.937455 28.845774 0.01 0 0 2.028945</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_32">
+          <pose>17.320508 30.000000 0.01 0 0 2.094395</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_32">
+          <pose>17.320508 30.000000 0.01 0 0 2.094395</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_33">
+          <pose>16.629392 31.111405 0.01 0 0 2.159845</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_33">
+          <pose>16.629392 31.111405 0.01 0 0 2.159845</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_34">
+          <pose>15.867067 32.175229 0.01 0 0 2.225295</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_34">
+          <pose>15.867067 32.175229 0.01 0 0 2.225295</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_35">
+          <pose>15.036796 33.186916 0.01 0 0 2.290745</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_35">
+          <pose>15.036796 33.186916 0.01 0 0 2.290745</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_36">
+          <pose>14.142136 34.142136 0.01 0 0 2.356194</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_36">
+          <pose>14.142136 34.142136 0.01 0 0 2.356194</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_37">
+          <pose>13.186916 35.036796 0.01 0 0 2.421644</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_37">
+          <pose>13.186916 35.036796 0.01 0 0 2.421644</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_38">
+          <pose>12.175229 35.867067 0.01 0 0 2.487094</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_38">
+          <pose>12.175229 35.867067 0.01 0 0 2.487094</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_39">
+          <pose>11.111405 36.629392 0.01 0 0 2.552544</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_39">
+          <pose>11.111405 36.629392 0.01 0 0 2.552544</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_40">
+          <pose>10.000000 37.320508 0.01 0 0 2.617994</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_40">
+          <pose>10.000000 37.320508 0.01 0 0 2.617994</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_41">
+          <pose>8.845774 37.937455 0.01 0 0 2.683444</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_41">
+          <pose>8.845774 37.937455 0.01 0 0 2.683444</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_42">
+          <pose>7.653669 38.477591 0.01 0 0 2.748894</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_42">
+          <pose>7.653669 38.477591 0.01 0 0 2.748894</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_43">
+          <pose>6.428789 38.938603 0.01 0 0 2.814343</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_43">
+          <pose>6.428789 38.938603 0.01 0 0 2.814343</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_44">
+          <pose>5.176381 39.318517 0.01 0 0 2.879793</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_44">
+          <pose>5.176381 39.318517 0.01 0 0 2.879793</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_45">
+          <pose>3.901806 39.615706 0.01 0 0 2.945243</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_45">
+          <pose>3.901806 39.615706 0.01 0 0 2.945243</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_46">
+          <pose>2.610524 39.828897 0.01 0 0 3.010693</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_46">
+          <pose>2.610524 39.828897 0.01 0 0 3.010693</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_47">
+          <pose>1.308063 39.957178 0.01 0 0 3.076143</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_47">
+          <pose>1.308063 39.957178 0.01 0 0 3.076143</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_48">
+          <pose>0.000000 40.000000 0.01 0 0 3.141593</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_48">
+          <pose>0.000000 40.000000 0.01 0 0 3.141593</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_49">
+          <pose>-1.308063 39.957178 0.01 0 0 3.207043</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_49">
+          <pose>-1.308063 39.957178 0.01 0 0 3.207043</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_50">
+          <pose>-2.610524 39.828897 0.01 0 0 3.272492</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_50">
+          <pose>-2.610524 39.828897 0.01 0 0 3.272492</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_51">
+          <pose>-3.901806 39.615706 0.01 0 0 3.337942</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_51">
+          <pose>-3.901806 39.615706 0.01 0 0 3.337942</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_52">
+          <pose>-5.176381 39.318517 0.01 0 0 3.403392</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_52">
+          <pose>-5.176381 39.318517 0.01 0 0 3.403392</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_53">
+          <pose>-6.428789 38.938603 0.01 0 0 3.468842</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_53">
+          <pose>-6.428789 38.938603 0.01 0 0 3.468842</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_54">
+          <pose>-7.653669 38.477591 0.01 0 0 3.534292</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_54">
+          <pose>-7.653669 38.477591 0.01 0 0 3.534292</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_55">
+          <pose>-8.845774 37.937455 0.01 0 0 3.599742</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_55">
+          <pose>-8.845774 37.937455 0.01 0 0 3.599742</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_56">
+          <pose>-10.000000 37.320508 0.01 0 0 3.665191</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_56">
+          <pose>-10.000000 37.320508 0.01 0 0 3.665191</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_57">
+          <pose>-11.111405 36.629392 0.01 0 0 3.730641</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_57">
+          <pose>-11.111405 36.629392 0.01 0 0 3.730641</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_58">
+          <pose>-12.175229 35.867067 0.01 0 0 3.796091</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_58">
+          <pose>-12.175229 35.867067 0.01 0 0 3.796091</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_59">
+          <pose>-13.186916 35.036796 0.01 0 0 3.861541</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_59">
+          <pose>-13.186916 35.036796 0.01 0 0 3.861541</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_60">
+          <pose>-14.142136 34.142136 0.01 0 0 3.926991</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_60">
+          <pose>-14.142136 34.142136 0.01 0 0 3.926991</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_61">
+          <pose>-15.036796 33.186916 0.01 0 0 3.992441</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_61">
+          <pose>-15.036796 33.186916 0.01 0 0 3.992441</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_62">
+          <pose>-15.867067 32.175229 0.01 0 0 4.057891</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_62">
+          <pose>-15.867067 32.175229 0.01 0 0 4.057891</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_63">
+          <pose>-16.629392 31.111405 0.01 0 0 4.123340</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_63">
+          <pose>-16.629392 31.111405 0.01 0 0 4.123340</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_64">
+          <pose>-17.320508 30.000000 0.01 0 0 4.188790</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_64">
+          <pose>-17.320508 30.000000 0.01 0 0 4.188790</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_65">
+          <pose>-17.937455 28.845774 0.01 0 0 4.254240</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_65">
+          <pose>-17.937455 28.845774 0.01 0 0 4.254240</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_66">
+          <pose>-18.477591 27.653669 0.01 0 0 4.319690</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_66">
+          <pose>-18.477591 27.653669 0.01 0 0 4.319690</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_67">
+          <pose>-18.938603 26.428789 0.01 0 0 4.385140</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_67">
+          <pose>-18.938603 26.428789 0.01 0 0 4.385140</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_68">
+          <pose>-19.318517 25.176381 0.01 0 0 4.450590</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_68">
+          <pose>-19.318517 25.176381 0.01 0 0 4.450590</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_69">
+          <pose>-19.615706 23.901806 0.01 0 0 4.516039</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_69">
+          <pose>-19.615706 23.901806 0.01 0 0 4.516039</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_70">
+          <pose>-19.828897 22.610524 0.01 0 0 4.581489</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_70">
+          <pose>-19.828897 22.610524 0.01 0 0 4.581489</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_71">
+          <pose>-19.957178 21.308063 0.01 0 0 4.646939</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_71">
+          <pose>-19.957178 21.308063 0.01 0 0 4.646939</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_72">
+          <pose>-20.000000 20.000000 0.01 0 0 4.712389</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_72">
+          <pose>-20.000000 20.000000 0.01 0 0 4.712389</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_73">
+          <pose>-19.957178 18.691937 0.01 0 0 4.777839</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_73">
+          <pose>-19.957178 18.691937 0.01 0 0 4.777839</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_74">
+          <pose>-19.828897 17.389476 0.01 0 0 4.843289</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_74">
+          <pose>-19.828897 17.389476 0.01 0 0 4.843289</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_75">
+          <pose>-19.615706 16.098194 0.01 0 0 4.908739</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_75">
+          <pose>-19.615706 16.098194 0.01 0 0 4.908739</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_76">
+          <pose>-19.318517 14.823619 0.01 0 0 4.974188</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_76">
+          <pose>-19.318517 14.823619 0.01 0 0 4.974188</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_77">
+          <pose>-18.938603 13.571211 0.01 0 0 5.039638</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_77">
+          <pose>-18.938603 13.571211 0.01 0 0 5.039638</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_78">
+          <pose>-18.477591 12.346331 0.01 0 0 5.105088</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_78">
+          <pose>-18.477591 12.346331 0.01 0 0 5.105088</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_79">
+          <pose>-17.937455 11.154226 0.01 0 0 5.170538</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_79">
+          <pose>-17.937455 11.154226 0.01 0 0 5.170538</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_80">
+          <pose>-17.320508 10.000000 0.01 0 0 5.235988</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_80">
+          <pose>-17.320508 10.000000 0.01 0 0 5.235988</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_81">
+          <pose>-16.629392 8.888595 0.01 0 0 5.301438</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_81">
+          <pose>-16.629392 8.888595 0.01 0 0 5.301438</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_82">
+          <pose>-15.867067 7.824771 0.01 0 0 5.366887</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_82">
+          <pose>-15.867067 7.824771 0.01 0 0 5.366887</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_83">
+          <pose>-15.036796 6.813084 0.01 0 0 5.432337</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_83">
+          <pose>-15.036796 6.813084 0.01 0 0 5.432337</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_84">
+          <pose>-14.142136 5.857864 0.01 0 0 5.497787</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_84">
+          <pose>-14.142136 5.857864 0.01 0 0 5.497787</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_85">
+          <pose>-13.186916 4.963204 0.01 0 0 5.563237</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_85">
+          <pose>-13.186916 4.963204 0.01 0 0 5.563237</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_86">
+          <pose>-12.175229 4.132933 0.01 0 0 5.628687</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_86">
+          <pose>-12.175229 4.132933 0.01 0 0 5.628687</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_87">
+          <pose>-11.111405 3.370608 0.01 0 0 5.694137</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_87">
+          <pose>-11.111405 3.370608 0.01 0 0 5.694137</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_88">
+          <pose>-10.000000 2.679492 0.01 0 0 5.759587</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_88">
+          <pose>-10.000000 2.679492 0.01 0 0 5.759587</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_89">
+          <pose>-8.845774 2.062545 0.01 0 0 5.825036</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_89">
+          <pose>-8.845774 2.062545 0.01 0 0 5.825036</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_90">
+          <pose>-7.653669 1.522409 0.01 0 0 5.890486</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_90">
+          <pose>-7.653669 1.522409 0.01 0 0 5.890486</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_91">
+          <pose>-6.428789 1.061397 0.01 0 0 5.955936</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_91">
+          <pose>-6.428789 1.061397 0.01 0 0 5.955936</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_92">
+          <pose>-5.176381 0.681483 0.01 0 0 6.021386</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_92">
+          <pose>-5.176381 0.681483 0.01 0 0 6.021386</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_93">
+          <pose>-3.901806 0.384294 0.01 0 0 6.086836</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_93">
+          <pose>-3.901806 0.384294 0.01 0 0 6.086836</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_94">
+          <pose>-2.610524 0.171103 0.01 0 0 6.152286</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_94">
+          <pose>-2.610524 0.171103 0.01 0 0 6.152286</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="road_collision_95">
+          <pose>-1.308063 0.042822 0.01 0 0 6.217735</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
+        </collision>
+        <visual name="road_visual_95">
+          <pose>-1.308063 0.042822 0.01 0 0 6.217735</pose>
+          <geometry><box><size>1.388763 8.00 0.02</size></box></geometry>
           <material>
             <ambient>0.15 0.15 0.15 1</ambient>
             <diffuse>0.15 0.15 0.15 1</diffuse>
@@ -41,26 +1171,1537 @@
     <model name="lane_markings">
       <static>true</static>
       <link name="lane_markings_link">
-        <visual name="left_lane_line">
-          <pose>0 2 0.025 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>1000 0.12 0.01</size>
-            </box>
-          </geometry>
+        <visual name="inner_lane_line_0">
+          <pose>0.000000 2.000000 0.025 0 0 0.000000</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
           <material>
             <ambient>1 1 1 1</ambient>
             <diffuse>1 1 1 1</diffuse>
           </material>
         </visual>
-
-        <visual name="right_lane_line">
-          <pose>0 -2 0.025 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>1000 0.12 0.01</size>
-            </box>
-          </geometry>
+        <visual name="inner_lane_line_1">
+          <pose>1.177256 2.038539 0.025 0 0 0.065450</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_2">
+          <pose>2.349471 2.153992 0.025 0 0 0.130900</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_3">
+          <pose>3.511626 2.345865 0.025 0 0 0.196350</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_4">
+          <pose>4.658743 2.613335 0.025 0 0 0.261799</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_5">
+          <pose>5.785910 2.955258 0.025 0 0 0.327249</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_6">
+          <pose>6.888302 3.370168 0.025 0 0 0.392699</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_7">
+          <pose>7.961196 3.856291 0.025 0 0 0.458149</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_8">
+          <pose>9.000000 4.411543 0.025 0 0 0.523599</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_9">
+          <pose>10.000264 5.033547 0.025 0 0 0.589049</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_10">
+          <pose>10.957706 5.719640 0.025 0 0 0.654498</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_11">
+          <pose>11.868225 6.466883 0.025 0 0 0.719948</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_12">
+          <pose>12.727922 7.272078 0.025 0 0 0.785398</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_13">
+          <pose>13.533117 8.131775 0.025 0 0 0.850848</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_14">
+          <pose>14.280360 9.042294 0.025 0 0 0.916298</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_15">
+          <pose>14.966453 9.999736 0.025 0 0 0.981748</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_16">
+          <pose>15.588457 11.000000 0.025 0 0 1.047198</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_17">
+          <pose>16.143709 12.038804 0.025 0 0 1.112647</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_18">
+          <pose>16.629832 13.111698 0.025 0 0 1.178097</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_19">
+          <pose>17.044742 14.214090 0.025 0 0 1.243547</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_20">
+          <pose>17.386665 15.341257 0.025 0 0 1.308997</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_21">
+          <pose>17.654135 16.488374 0.025 0 0 1.374447</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_22">
+          <pose>17.846008 17.650529 0.025 0 0 1.439897</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_23">
+          <pose>17.961461 18.822744 0.025 0 0 1.505346</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_24">
+          <pose>18.000000 20.000000 0.025 0 0 1.570796</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_25">
+          <pose>17.961461 21.177256 0.025 0 0 1.636246</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_26">
+          <pose>17.846008 22.349471 0.025 0 0 1.701696</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_27">
+          <pose>17.654135 23.511626 0.025 0 0 1.767146</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_28">
+          <pose>17.386665 24.658743 0.025 0 0 1.832596</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_29">
+          <pose>17.044742 25.785910 0.025 0 0 1.898046</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_30">
+          <pose>16.629832 26.888302 0.025 0 0 1.963495</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_31">
+          <pose>16.143709 27.961196 0.025 0 0 2.028945</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_32">
+          <pose>15.588457 29.000000 0.025 0 0 2.094395</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_33">
+          <pose>14.966453 30.000264 0.025 0 0 2.159845</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_34">
+          <pose>14.280360 30.957706 0.025 0 0 2.225295</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_35">
+          <pose>13.533117 31.868225 0.025 0 0 2.290745</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_36">
+          <pose>12.727922 32.727922 0.025 0 0 2.356194</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_37">
+          <pose>11.868225 33.533117 0.025 0 0 2.421644</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_38">
+          <pose>10.957706 34.280360 0.025 0 0 2.487094</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_39">
+          <pose>10.000264 34.966453 0.025 0 0 2.552544</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_40">
+          <pose>9.000000 35.588457 0.025 0 0 2.617994</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_41">
+          <pose>7.961196 36.143709 0.025 0 0 2.683444</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_42">
+          <pose>6.888302 36.629832 0.025 0 0 2.748894</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_43">
+          <pose>5.785910 37.044742 0.025 0 0 2.814343</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_44">
+          <pose>4.658743 37.386665 0.025 0 0 2.879793</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_45">
+          <pose>3.511626 37.654135 0.025 0 0 2.945243</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_46">
+          <pose>2.349471 37.846008 0.025 0 0 3.010693</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_47">
+          <pose>1.177256 37.961461 0.025 0 0 3.076143</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_48">
+          <pose>0.000000 38.000000 0.025 0 0 3.141593</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_49">
+          <pose>-1.177256 37.961461 0.025 0 0 3.207043</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_50">
+          <pose>-2.349471 37.846008 0.025 0 0 3.272492</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_51">
+          <pose>-3.511626 37.654135 0.025 0 0 3.337942</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_52">
+          <pose>-4.658743 37.386665 0.025 0 0 3.403392</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_53">
+          <pose>-5.785910 37.044742 0.025 0 0 3.468842</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_54">
+          <pose>-6.888302 36.629832 0.025 0 0 3.534292</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_55">
+          <pose>-7.961196 36.143709 0.025 0 0 3.599742</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_56">
+          <pose>-9.000000 35.588457 0.025 0 0 3.665191</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_57">
+          <pose>-10.000264 34.966453 0.025 0 0 3.730641</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_58">
+          <pose>-10.957706 34.280360 0.025 0 0 3.796091</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_59">
+          <pose>-11.868225 33.533117 0.025 0 0 3.861541</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_60">
+          <pose>-12.727922 32.727922 0.025 0 0 3.926991</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_61">
+          <pose>-13.533117 31.868225 0.025 0 0 3.992441</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_62">
+          <pose>-14.280360 30.957706 0.025 0 0 4.057891</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_63">
+          <pose>-14.966453 30.000264 0.025 0 0 4.123340</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_64">
+          <pose>-15.588457 29.000000 0.025 0 0 4.188790</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_65">
+          <pose>-16.143709 27.961196 0.025 0 0 4.254240</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_66">
+          <pose>-16.629832 26.888302 0.025 0 0 4.319690</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_67">
+          <pose>-17.044742 25.785910 0.025 0 0 4.385140</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_68">
+          <pose>-17.386665 24.658743 0.025 0 0 4.450590</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_69">
+          <pose>-17.654135 23.511626 0.025 0 0 4.516039</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_70">
+          <pose>-17.846008 22.349471 0.025 0 0 4.581489</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_71">
+          <pose>-17.961461 21.177256 0.025 0 0 4.646939</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_72">
+          <pose>-18.000000 20.000000 0.025 0 0 4.712389</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_73">
+          <pose>-17.961461 18.822744 0.025 0 0 4.777839</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_74">
+          <pose>-17.846008 17.650529 0.025 0 0 4.843289</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_75">
+          <pose>-17.654135 16.488374 0.025 0 0 4.908739</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_76">
+          <pose>-17.386665 15.341257 0.025 0 0 4.974188</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_77">
+          <pose>-17.044742 14.214090 0.025 0 0 5.039638</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_78">
+          <pose>-16.629832 13.111698 0.025 0 0 5.105088</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_79">
+          <pose>-16.143709 12.038804 0.025 0 0 5.170538</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_80">
+          <pose>-15.588457 11.000000 0.025 0 0 5.235988</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_81">
+          <pose>-14.966453 9.999736 0.025 0 0 5.301438</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_82">
+          <pose>-14.280360 9.042294 0.025 0 0 5.366887</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_83">
+          <pose>-13.533117 8.131775 0.025 0 0 5.432337</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_84">
+          <pose>-12.727922 7.272078 0.025 0 0 5.497787</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_85">
+          <pose>-11.868225 6.466883 0.025 0 0 5.563237</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_86">
+          <pose>-10.957706 5.719640 0.025 0 0 5.628687</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_87">
+          <pose>-10.000264 5.033547 0.025 0 0 5.694137</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_88">
+          <pose>-9.000000 4.411543 0.025 0 0 5.759587</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_89">
+          <pose>-7.961196 3.856291 0.025 0 0 5.825036</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_90">
+          <pose>-6.888302 3.370168 0.025 0 0 5.890486</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_91">
+          <pose>-5.785910 2.955258 0.025 0 0 5.955936</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_92">
+          <pose>-4.658743 2.613335 0.025 0 0 6.021386</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_93">
+          <pose>-3.511626 2.345865 0.025 0 0 6.086836</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_94">
+          <pose>-2.349471 2.153992 0.025 0 0 6.152286</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="inner_lane_line_95">
+          <pose>-1.177256 2.038539 0.025 0 0 6.217735</pose>
+          <geometry><box><size>1.237887 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_0">
+          <pose>0.000000 -2.000000 0.025 0 0 0.000000</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_1">
+          <pose>1.438869 -1.952896 0.025 0 0 0.065450</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_2">
+          <pose>2.871576 -1.811787 0.025 0 0 0.130900</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_3">
+          <pose>4.291987 -1.577276 0.025 0 0 0.196350</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_4">
+          <pose>5.694019 -1.250368 0.025 0 0 0.261799</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_5">
+          <pose>7.071668 -0.832463 0.025 0 0 0.327249</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_6">
+          <pose>8.419036 -0.325350 0.025 0 0 0.392699</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_7">
+          <pose>9.730351 0.268800 0.025 0 0 0.458149</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_8">
+          <pose>11.000000 0.947441 0.025 0 0 0.523599</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_9">
+          <pose>12.222545 1.707669 0.025 0 0 0.589049</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_10">
+          <pose>13.392751 2.546227 0.025 0 0 0.654498</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_11">
+          <pose>14.505608 3.459524 0.025 0 0 0.719948</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_12">
+          <pose>15.556349 4.443651 0.025 0 0 0.785398</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_13">
+          <pose>16.540476 5.494392 0.025 0 0 0.850848</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_14">
+          <pose>17.453773 6.607249 0.025 0 0 0.916298</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_15">
+          <pose>18.292331 7.777455 0.025 0 0 0.981748</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_16">
+          <pose>19.052559 9.000000 0.025 0 0 1.047198</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_17">
+          <pose>19.731200 10.269649 0.025 0 0 1.112647</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_18">
+          <pose>20.325350 11.580964 0.025 0 0 1.178097</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_19">
+          <pose>20.832463 12.928332 0.025 0 0 1.243547</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_20">
+          <pose>21.250368 14.305981 0.025 0 0 1.308997</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_21">
+          <pose>21.577276 15.708013 0.025 0 0 1.374447</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_22">
+          <pose>21.811787 17.128424 0.025 0 0 1.439897</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_23">
+          <pose>21.952896 18.561131 0.025 0 0 1.505346</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_24">
+          <pose>22.000000 20.000000 0.025 0 0 1.570796</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_25">
+          <pose>21.952896 21.438869 0.025 0 0 1.636246</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_26">
+          <pose>21.811787 22.871576 0.025 0 0 1.701696</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_27">
+          <pose>21.577276 24.291987 0.025 0 0 1.767146</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_28">
+          <pose>21.250368 25.694019 0.025 0 0 1.832596</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_29">
+          <pose>20.832463 27.071668 0.025 0 0 1.898046</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_30">
+          <pose>20.325350 28.419036 0.025 0 0 1.963495</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_31">
+          <pose>19.731200 29.730351 0.025 0 0 2.028945</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_32">
+          <pose>19.052559 31.000000 0.025 0 0 2.094395</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_33">
+          <pose>18.292331 32.222545 0.025 0 0 2.159845</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_34">
+          <pose>17.453773 33.392751 0.025 0 0 2.225295</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_35">
+          <pose>16.540476 34.505608 0.025 0 0 2.290745</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_36">
+          <pose>15.556349 35.556349 0.025 0 0 2.356194</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_37">
+          <pose>14.505608 36.540476 0.025 0 0 2.421644</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_38">
+          <pose>13.392751 37.453773 0.025 0 0 2.487094</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_39">
+          <pose>12.222545 38.292331 0.025 0 0 2.552544</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_40">
+          <pose>11.000000 39.052559 0.025 0 0 2.617994</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_41">
+          <pose>9.730351 39.731200 0.025 0 0 2.683444</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_42">
+          <pose>8.419036 40.325350 0.025 0 0 2.748894</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_43">
+          <pose>7.071668 40.832463 0.025 0 0 2.814343</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_44">
+          <pose>5.694019 41.250368 0.025 0 0 2.879793</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_45">
+          <pose>4.291987 41.577276 0.025 0 0 2.945243</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_46">
+          <pose>2.871576 41.811787 0.025 0 0 3.010693</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_47">
+          <pose>1.438869 41.952896 0.025 0 0 3.076143</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_48">
+          <pose>0.000000 42.000000 0.025 0 0 3.141593</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_49">
+          <pose>-1.438869 41.952896 0.025 0 0 3.207043</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_50">
+          <pose>-2.871576 41.811787 0.025 0 0 3.272492</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_51">
+          <pose>-4.291987 41.577276 0.025 0 0 3.337942</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_52">
+          <pose>-5.694019 41.250368 0.025 0 0 3.403392</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_53">
+          <pose>-7.071668 40.832463 0.025 0 0 3.468842</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_54">
+          <pose>-8.419036 40.325350 0.025 0 0 3.534292</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_55">
+          <pose>-9.730351 39.731200 0.025 0 0 3.599742</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_56">
+          <pose>-11.000000 39.052559 0.025 0 0 3.665191</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_57">
+          <pose>-12.222545 38.292331 0.025 0 0 3.730641</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_58">
+          <pose>-13.392751 37.453773 0.025 0 0 3.796091</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_59">
+          <pose>-14.505608 36.540476 0.025 0 0 3.861541</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_60">
+          <pose>-15.556349 35.556349 0.025 0 0 3.926991</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_61">
+          <pose>-16.540476 34.505608 0.025 0 0 3.992441</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_62">
+          <pose>-17.453773 33.392751 0.025 0 0 4.057891</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_63">
+          <pose>-18.292331 32.222545 0.025 0 0 4.123340</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_64">
+          <pose>-19.052559 31.000000 0.025 0 0 4.188790</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_65">
+          <pose>-19.731200 29.730351 0.025 0 0 4.254240</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_66">
+          <pose>-20.325350 28.419036 0.025 0 0 4.319690</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_67">
+          <pose>-20.832463 27.071668 0.025 0 0 4.385140</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_68">
+          <pose>-21.250368 25.694019 0.025 0 0 4.450590</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_69">
+          <pose>-21.577276 24.291987 0.025 0 0 4.516039</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_70">
+          <pose>-21.811787 22.871576 0.025 0 0 4.581489</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_71">
+          <pose>-21.952896 21.438869 0.025 0 0 4.646939</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_72">
+          <pose>-22.000000 20.000000 0.025 0 0 4.712389</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_73">
+          <pose>-21.952896 18.561131 0.025 0 0 4.777839</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_74">
+          <pose>-21.811787 17.128424 0.025 0 0 4.843289</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_75">
+          <pose>-21.577276 15.708013 0.025 0 0 4.908739</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_76">
+          <pose>-21.250368 14.305981 0.025 0 0 4.974188</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_77">
+          <pose>-20.832463 12.928332 0.025 0 0 5.039638</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_78">
+          <pose>-20.325350 11.580964 0.025 0 0 5.105088</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_79">
+          <pose>-19.731200 10.269649 0.025 0 0 5.170538</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_80">
+          <pose>-19.052559 9.000000 0.025 0 0 5.235988</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_81">
+          <pose>-18.292331 7.777455 0.025 0 0 5.301438</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_82">
+          <pose>-17.453773 6.607249 0.025 0 0 5.366887</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_83">
+          <pose>-16.540476 5.494392 0.025 0 0 5.432337</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_84">
+          <pose>-15.556349 4.443651 0.025 0 0 5.497787</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_85">
+          <pose>-14.505608 3.459524 0.025 0 0 5.563237</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_86">
+          <pose>-13.392751 2.546227 0.025 0 0 5.628687</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_87">
+          <pose>-12.222545 1.707669 0.025 0 0 5.694137</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_88">
+          <pose>-11.000000 0.947441 0.025 0 0 5.759587</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_89">
+          <pose>-9.730351 0.268800 0.025 0 0 5.825036</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_90">
+          <pose>-8.419036 -0.325350 0.025 0 0 5.890486</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_91">
+          <pose>-7.071668 -0.832463 0.025 0 0 5.955936</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_92">
+          <pose>-5.694019 -1.250368 0.025 0 0 6.021386</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_93">
+          <pose>-4.291987 -1.577276 0.025 0 0 6.086836</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_94">
+          <pose>-2.871576 -1.811787 0.025 0 0 6.152286</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <visual name="outer_lane_line_95">
+          <pose>-1.438869 -1.952896 0.025 0 0 6.217735</pose>
+          <geometry><box><size>1.499640 0.12 0.01</size></box></geometry>
           <material>
             <ambient>1 1 1 1</ambient>
             <diffuse>1 1 1 1</diffuse>
@@ -68,6 +2709,5 @@
         </visual>
       </link>
     </model>
-
   </world>
 </sdf>

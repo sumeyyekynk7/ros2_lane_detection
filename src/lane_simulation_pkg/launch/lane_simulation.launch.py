@@ -78,8 +78,8 @@ def generate_launch_description():
         parameters=[{
             'forward_speed': 0.35,
             'steering_gain': 0.008,
-            'max_angular_speed': 0.8,
-            'detection_timeout': 0.5,
+            'max_angular_speed': 0.2,
+            'detection_timeout': 1.0,
         }],
         output='screen',
     )

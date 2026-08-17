@@ -105,10 +105,12 @@ class VideoReader(Node):
         height, width = edge_frame.shape
         bottom_ratio = 0.48 if self.camera_input else 0.92
         top_ratio = 0.31 if self.camera_input else 0.50
+        top_left_ratio = 0.0 if self.camera_input else 0.43
+        top_right_ratio = 1.0 if self.camera_input else 0.57
         road_polygon = np.array([[
             (0, int(height * bottom_ratio)),
-            (int(width * 0.43), int(height * top_ratio)),
-            (int(width * 0.57), int(height * top_ratio)),
+            (int(width * top_left_ratio), int(height * top_ratio)),
+            (int(width * top_right_ratio), int(height * top_ratio)),
             (width - 1, int(height * bottom_ratio)),
         ]], dtype=np.int32)
 
